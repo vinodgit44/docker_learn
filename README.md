@@ -20,7 +20,7 @@ process independent of other containers,
 
 # Docker commands
 
-# IMAGE
+# Image
 - Pulling an image from online registry.
 ```
 docker pull {imagename:tag}
@@ -47,7 +47,7 @@ docker run --name {name of container} -d {imagename}
 ```
 docker stop {container name}
 
-for stopping all containers
+- For stopping all containers
 
 docker stop $(docker ps -aq)
 ```
@@ -57,18 +57,18 @@ docker stop $(docker ps -aq)
 docker start {container name }
 ```
 
-- list container 
+- List container 
 ```
 docker ls -a
 or
 docker ps
 ```
 
-- remove a container 
+- Remove a container 
 ```
 docker rm {container id or name }
 
-to remove running container forcefully
+To remove running container forcefully
 
 docker rm {container id or name } -f 
 
@@ -78,13 +78,13 @@ docker rm $(docker ps -aq)
 ```
 
 # Port
-- for exposing ports (host 8080 : container 80}
+- For exposing ports (host 8080 : container 80}
 
 ```
 docker run --name {name} -d -p 8080:80 image:tag}
 
 
-*we can map multiple ports by adding by adding -p host:container 
+NOTE*we can map multiple ports by adding by adding -p host:container 
 ```
 # Volume
 Allows us to share data between host and container or between containers
@@ -95,6 +95,8 @@ docker run --name {name} -d -p {host port:container port} -v {host file  path :c
 
 eg. docker run --name website -d -p 8080:80 -v /media/delta/data11/demo_website:/usr/share/nginx/html:ro nginx:latest
 ```
+
+NOTE: for hosting beautiful single page website template https://startbootstrap.com/themes/landing-pages
 - Share between containers 
 ```
 docker run --name {name} -d -p {host port:container port} --volumes-from {container_name} image:tag
@@ -107,6 +109,25 @@ eg. docker run --name website_copy -d -p 8081:80  --volumes-from website nginx:l
 ```
 docker exec it {container name} bash
 ```
+
+
+# Dockerfile
+
+- It is used to build own images. Dockerfile has instructions for making own image.
+- We always start with some image as base then we add our files into that image 
+- make a file in directory named Dockerfile and write following command.
+
+```
+FROM nginx:latest
+ADD ./website /usr/share/nginx/html
+```
+
+- Build Dockerfile
+```
+docker build --tag {name:tag} . 
+```
+
+.represents location of Dockerfile
 
 
 
