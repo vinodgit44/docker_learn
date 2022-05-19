@@ -1,20 +1,24 @@
-Docker 
+#Docker 
+
 Docker is an open-source OS-level virtualization platform that allows users to develop, deploy, and run
 applications in independent containers.
 
-Docker registries
+- Docker registries
 A Docker registry is an online library that stores container images to deploy and run on Docker. 
 
-Container images
+- Container images
 A container image is  template with instructions for creating a Docker container. In the Docker
 container, it has everything that an app needs to run like OS ,Software, application code
 
-Docker containers
+- Docker containers
 A Docker container is a runtime instance of an image. A Docker container runs a discrete
 process independent of other containers,
+```
+---------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+```
 
-
-Docker commands
+#Docker commands
 
 # IMAGE
 - Pulling an image from online registry.
