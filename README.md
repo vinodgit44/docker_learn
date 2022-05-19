@@ -1,4 +1,4 @@
-#Docker 
+# Docker 
 
 Docker is an open-source OS-level virtualization platform that allows users to develop, deploy, and run
 applications in independent containers.
@@ -18,7 +18,7 @@ process independent of other containers,
 ---------------------------------------------------------------------------------------------------------------
 ```
 
-#Docker commands
+# Docker commands
 
 # IMAGE
 - Pulling an image from online registry.
